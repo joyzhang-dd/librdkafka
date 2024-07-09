@@ -490,6 +490,8 @@ static int rd_kafka_msgset_writer_init(rd_kafka_msgset_writer_t *msetw,
                                        rd_kafka_msgq_t *rkmq,
                                        rd_kafka_pid_t pid,
                                        uint64_t epoch_base_msgid) {
+	rd_rkb_log(rkb, LOG_ERR, "test", "partition: %" PRId32, rktp->rktp_partition);
+
         int msgcnt = rd_kafka_msgq_len(rkmq);
 
         if (msgcnt == 0)
